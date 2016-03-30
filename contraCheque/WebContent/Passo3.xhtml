@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>(Beta) Gerenciador de Contra Cheque</title>
+	<link rel="icon" type="image/png" href="resources/images/favicon2.png"/>
+	<link rel="StyleSheet" type="text/css" href="resources/css/style.css"
+		media="screen" />
+
+</h:head>
+<h:body>
+	<div id="tudo">
+		<div id="cabecalho">
+			<h:form>
+				<h1>Gerenciador de ContraCheque</h1>
+				<h4>Beta</h4>
+			</h:form>
+		</div>
+		<div id="menu">
+			<h:form>
+				<p:steps activeIndex="3" styleClass="custom" readonly="false">
+					<p:menuitem value="Início" url="Inicial.jsf" />
+					<p:menuitem value="Enviar EXPORTA" url="Passo1.jsf" />
+					<p:menuitem value="Gerar PDFs" url="Passo2.jsf" />
+					<p:menuitem value="Visitar Site" url="Passo3.jsf" />
+				</p:steps>
+			</h:form>
+		</div>
+
+		<div id="centro">
+			<h2><a href="http://contracheque.ceasa.go.gov.br/">Site do Contracheque</a></h2>
+		</div>
+
+
+		<div id="rodape">
+			<div id="texto">
+				<h5>
+					Gerador de Contracheque online versão 1.0<br />
+					Copyright © 2016 <a href="http://www.linkedin.com/in/SVitorRoberto">SV-Software Ltda.</a> Todos os direitos reservados.
+				</h5>
+			</div>
+		</div>
+	</div>
+</h:body>
+
+
+</html>

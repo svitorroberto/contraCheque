@@ -1,0 +1,6 @@
+D:\\RH\\Contracheque\\Contracheque\\
+D:\\RH\\Meus Documentos RH\\CONTRACHEQUES\\CONTRACHEQUES 2015\\teste
+C:\\Program Files (x86)\\Apache Software Foundation\\Tomcat 8.0\\webapps\\contraCheque\\resources\\images\\logo.jpg
+D:\\RH\\Meus Documentos RH\\CONTRACHEQUES\\CONTRACHEQUES 2015\\teste
+D:\\RH\\Contracheque\\Contracheque\\txt\\
+/teste/contraCheque/

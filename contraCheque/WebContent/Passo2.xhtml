@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>(Beta) Gerenciador de Contra Cheque</title>
+	<link rel="icon" type="image/png" href="resources/images/favicon2.png"/>
+	<link rel="StyleSheet" type="text/css" href="resources/css/style.css"
+		media="screen" />
+
+</h:head>
+<h:body>
+	<div id="tudo">
+		<div id="cabecalho">
+			<h:form>
+				<h1>Gerenciador de ContraCheque</h1>
+				<h4>Beta</h4>
+			</h:form>
+		</div>
+		<div id="menu">
+			<h:form>
+				<p:steps activeIndex="2" styleClass="custom" readonly="false">
+					<p:menuitem value="Início" url="Inicial.jsf" />
+					<p:menuitem value="Enviar EXPORTA" url="Passo1.jsf" />
+					<p:menuitem value="Gerar PDFs" url="Passo2.jsf" />
+					<p:menuitem value="Visitar Site" url="Passo3.jsf" />
+				</p:steps>
+			</h:form>
+		</div>
+
+		<div id="centro">
+			<h:form>
+				<h3>Mensagem</h3>
+				<p:inputTextarea rows="6" cols="33"/>
+				<p:commandButton value="Salvar Mensagem" id="ajax5"	actionListener="#{arquivosMB.salvarMensagem}" />
+			</h:form>
+			<h:form>
+				<p:growl id="growl" life="2000" />
+
+				<p:ajaxStatus style="display:block;margin-bottom:2em;height:24px;">
+					<f:facet name="default1">
+						<h:outputText value="Status: StandBy" />
+					</f:facet>
+					<f:facet name="start1">
+						<p:graphicImage name="images/ajaxloadingbar.gif" />
+					</f:facet>
+					<f:facet name="complete1">
+						<h:outputText value="Status: Completed" />
+					</f:facet>
+				</p:ajaxStatus>
+				<p:ajaxStatus onstart="PF('statusDialog').show()"
+					onsuccess="PF('statusDialog').hide()" />
+				<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+					closable="false" resizable="false" showHeader="false">
+					<p:graphicImage name="images/ajaxloadingbar.gif" />
+				</p:dialog>
+
+				<p:commandButton value="Gerar PDFs" id="ajax1"
+					actionListener="#{arquivosMB.gerarPDF}" icon="ui-icon-refresh" />
+
+
+				<p:ajaxStatus style="display:block;margin-bottom:2em;height:24px;">
+					<f:facet name="default">
+						<h:outputText value="Status: StandBy" />
+					</f:facet>
+					<f:facet name="start">
+						<p:graphicImage name="images/ajaxloadingbar.gif" />
+					</f:facet>
+					<f:facet name="complete">
+						<h:outputText value="Status: Completed" />
+					</f:facet>
+				</p:ajaxStatus>
+				<p:ajaxStatus onstart="PF('statusDialog').show()"
+					onsuccess="PF('statusDialog').hide()" />
+				<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
+					closable="false" resizable="false" showHeader="false">
+					<p:graphicImage name="images/ajaxloadingbar.gif" />
+				</p:dialog>
+
+				<p:commandButton value="Gerar e Publicar PDFs" id="ajax2"
+					actionListener="#{arquivosMB.gerarEPublicarPDF}"
+					icon="ui-icon-refresh" />
+			</h:form>
+			<h:form>
+				<p:messages severity="info" escape="false" showDetail="true"
+					autoUpdate="true" closable="true" />
+			</h:form>
+
+
+
+		</div>
+
+
+		<div id="rodape">
+			<div id="texto">
+				<h5>
+					Gerador de Contracheque online versão 1.0<br />
+					Copyright © 2016 <a href="http://www.linkedin.com/in/SVitorRoberto">SV-Software Ltda.</a> Todos os direitos reservados.
+				</h5>
+			</div>
+		</div>
+	</div>
+</h:body>
+
+
+</html>

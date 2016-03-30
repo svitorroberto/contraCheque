@@ -1,0 +1,208 @@
+@CHARSET "ISO-8859-1";
+
+/*########## POSIÇOES ############ */
+body{
+	width:100%;
+	margin: 0;
+	background-color: #313246;
+}
+#tudo{
+	width: 760px;
+	margin:0 auto;
+	background-color: #313246;
+	
+}
+#cabecalho{
+	position: relative;
+	float: left;
+	width:760px;
+	height: 200px;
+	background-color: #70D0F6;
+}
+#menu{
+	position: relative;
+	float: left;
+	width:760px;
+	height: 100px;
+	background-color: #70D0F6;
+}
+#centro{
+	padding-left: 10px;
+	padding-right: 10px;
+    position: relative;
+    float: left;
+    width: 740px;
+    min-height: 400px;
+    background-color: #70D0F6;
+	
+}
+#rodape{
+	position: relative;
+	float: left;
+	width:760px;
+	height: 83px;
+	background-color: #1B232E;
+}
+#texto{
+	position: relative;
+	float: left;
+	border: 1px solid #F29022;
+	margin-left: 191px;
+    margin-top: 17px;
+    padding: 0px 7px 0px 7px;
+	
+}
+
+/*########## ATRIBUTOS ############ */
+#texto h5{
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+#texto > h5 > a{
+	color: #F29022;
+	text-decoration:none; 
+}
+
+h1{
+	color: #313246;
+	text-align: center;
+}
+
+h2{
+	color: #313246;
+	text-align: center;
+}
+h3{
+	color: #313246;
+	
+}
+h4{
+	color: #313246;
+	text-align: center;
+}
+
+h5{
+	color: white;
+	text-align: center;
+}
+a{
+	color: #313246;
+}
+h:form{
+	background-color: black;
+	
+	
+}
+.ui-steps-title{
+	color: white;
+}
+.ui-steps .ui-steps-item {
+    width: 24.9%;
+}
+ 
+.ui-state-highlight {
+    text-shadow: none !important;
+}
+ 
+.ui-steps.custom {
+    margin-bottom: 30px;
+}
+ 
+.ui-steps.custom .ui-steps-item .ui-menuitem-link {
+    height: 10px;
+    padding: 0 1em;
+}
+ 
+.ui-steps.custom .ui-steps-item .ui-steps-number {
+    background-color: #0081c2;
+    color: #FFFFFF;
+    display: inline-block;
+    width: 30px;
+    border-radius: 10px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.value{
+	width: 400px;
+}
+.ui-selectonelistbox{
+	width: 400px;
+}
+
+
+
+.ui-button{
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #3498db;
+  border: 0;
+  border-bottom: 2px solid #2a8bcc;
+  cursor: pointer;
+  box-shadow: inset 0 -2px #2a8bcc;
+	
+}
+.ui-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.ui-state-highlight{
+	
+	border: 1px solid #93A5A7;
+    background: #93A5A7;
+}
+.ui-widget-header{
+	border: none;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+	border: none;
+	background: #3498DB;
+	text-shadow: none;
+	color: white;
+	box-shadow: none !important;
+}
+.ui-widget-content{
+	border: none;
+}
+.ui-fileupload-content{
+	padding: 0;
+}
+.ui-steps .ui-steps-title{
+	color: #313246;
+}
+#j_idt16\3a j_idt17 > div.ui-fileupload-buttonbar.ui-widget-header.ui-corner-top {
+	background-color: #70D0F6 !important;
+}
+#j_idt16\3a j_idt18{
+	 color: #313131;	
+}
+/*########## MODIFICA CAMINHOS ############ */
+.ui-widget-header {
+	background: #1B232E;	
+}
+#j_idt16\3a j_idt18{
+	background: white !important;
+}
+#form\3a lista{
+	margin-bottom: 7px;
+}
+#j_idt15{
+	margin-top: 10px;
+}
+#j_idt15\3a j_idt16{
+	margin-right: 10px;
+}
+#form\3a lista > div.ui-datalist-header.ui-widget-header.ui-corner-top{
+	color: white;
+}
+#j_idt15\3a j_idt17{
+	background-color: white;
+}
+#form\3a lista > div.ui-datalist-header.ui-widget-header.ui-corner-top{
+	background: #3498DB;
+}
+#j_idt15\3a j_idt17{
+    color: #313131;	
+}
