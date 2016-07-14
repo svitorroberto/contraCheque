@@ -10,11 +10,11 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
+import ftp.ConexaoFTP;
 import main.PDFFactory;
 import model.Caminhos;
 import model.Funcionario;
-import model.Provento;
-import ftp.ConexaoFTP;
+import model.Provento2;
 
 @ManagedBean(name = "arquivosMB")
 public class ArquivosMB {
@@ -22,8 +22,10 @@ public class ArquivosMB {
 
 	static ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 	static Funcionario f;
-	static Provento p;
-	
+	static Provento2 p;
+	public Funcionario f2;
+	static String msg;
+
 	public static void gerarPDF(){
 
 			FileUploadMB fmb = new FileUploadMB();
@@ -41,6 +43,7 @@ public class ArquivosMB {
 					if(num==1){
 						
 						f= new Funcionario();
+						f.setMensagem(msg);
 						f.setLotacao(Integer.parseInt(linha.substring(1, 6)));
 						f.setDivisao(linha.substring(6, 46));
 						f.setCargo(linha.substring(51, 91));
@@ -69,7 +72,7 @@ public class ArquivosMB {
 								
 					}
 					if(num==2){
-						p = new Provento();
+						p = new Provento2();
 						p.setCodigo(Integer.parseInt(linha.substring(1, 5)));
 						p.setDescricao(linha.substring(5, 45));
 						p.setAliquota((Double.parseDouble(linha.substring(45, 52))/100));
@@ -80,7 +83,7 @@ public class ArquivosMB {
 					}
 					if(num==3){
 						//System.out.println(linha.substring(52, 59));
-						p = new Provento();
+						p = new Provento2();
 						p.setCodigo(Integer.parseInt(linha.substring(1, 5)));
 						p.setDescricao(linha.substring(5, 45));
 						p.setAliquota((Double.parseDouble(linha.substring(45, 52))/100));
@@ -115,7 +118,7 @@ public class ArquivosMB {
 		
 				arq.close();
 		//		f.setMensagem(InputTextAreaMB.msg);
-				
+				msg=null;
 				System.out.println("\n\n\n");
 				
 				
@@ -194,7 +197,7 @@ public class ArquivosMB {
 									
 						}
 						if(num==2){
-							p = new Provento();
+							p = new Provento2();
 							p.setCodigo(Integer.parseInt(linha.substring(1, 5)));
 							p.setDescricao(linha.substring(5, 45));
 							p.setAliquota((Double.parseDouble(linha.substring(45, 52))/100));
@@ -205,7 +208,7 @@ public class ArquivosMB {
 						}
 						if(num==3){
 							//System.out.println(linha.substring(52, 59));
-							p = new Provento();
+							p = new Provento2();
 							p.setCodigo(Integer.parseInt(linha.substring(1, 5)));
 							p.setDescricao(linha.substring(5, 45));
 							p.setAliquota((Double.parseDouble(linha.substring(45, 52))/100));
@@ -239,7 +242,7 @@ public class ArquivosMB {
 						
 			
 					arq.close();
-					
+					msg=null;
 					System.out.println("\n\n\n");
 					
 					
@@ -290,12 +293,22 @@ public class ArquivosMB {
 
 	}
 	
-	public void salvarMensagem(String mensagem){
-		f.setMensagem(mensagem);
-		FacesMessage msg2 = new FacesMessage("Pronto","Mensagem salva!"+f.getMensagem());  
+	public void salvarMensagem(){
+		FacesMessage msg2 = new FacesMessage("Pronto","Mensagem salva! "+f.getMensagem());  
         FacesContext.getCurrentInstance().addMessage(null, msg2);
         System.out.println(f.getMensagem());
 		
 	}
+
+	
+	public Funcionario getF2() {
+		return f2;
+	}
+
+	public void setF2(Funcionario f2) {
+		this.f2 = f2;
+		msg = f2.getMensagem();
+	}
+	
 
 }

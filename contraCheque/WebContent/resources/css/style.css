@@ -97,7 +97,7 @@ h:form{
 	color: white;
 }
 .ui-steps .ui-steps-item {
-    width: 24.9%;
+    width: 19.9%;
 }
  
 .ui-state-highlight {
@@ -172,7 +172,7 @@ h:form{
 .ui-steps .ui-steps-title{
 	color: #313246;
 }
-#j_idt16\3a j_idt17 > div.ui-fileupload-buttonbar.ui-widget-header.ui-corner-top {
+#j_idt17\3a j_idt18 > div.ui-fileupload-buttonbar.ui-widget-header.ui-corner-top {
 	background-color: #70D0F6 !important;
 }
 #j_idt16\3a j_idt18{
@@ -205,4 +205,35 @@ h:form{
 }
 #j_idt15\3a j_idt17{
     color: #313131;	
+}
+
+#j_idt17\3a j_idt19{
+	margin-right: 415px;
+}
+#j_idt17\3a ajax1{
+    width: 190px;
+    height: 50px;
+    position: relative;
+    margin-left: 108px;
+}
+#j_idt17\3a j_idt25_default{
+	margin-left: 325px;
+	
+}
+#j_idt17\3a ajax2{
+	margin-left: 100px;
+    height: 50px;
+}
+#j_idt17\3a j_idt26{
+	margin-left: 177px;
+}
+#j_idt17\3a ajax1{
+	margin-left: 127px;
+}
+#botaoPublicar{
+	width: 430px;
+    height: 100px;
+    padding: 50px 0 0px 0px;
+    border: 1px solid #1B232E;
+    margin: 10px auto;
 }

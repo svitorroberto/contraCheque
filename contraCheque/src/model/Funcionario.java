@@ -24,7 +24,7 @@ public class Funcionario {
 	private int agencia;
 	private String conta;
 	
-	private ArrayList<Provento> proventos = new ArrayList<Provento>();
+	private ArrayList<Provento2> proventos = new ArrayList<Provento2>();
 	
 	private String salContInss;
 	private String baseCalcFgts;
@@ -180,7 +180,7 @@ public class Funcionario {
 		this.conta = conta;
 	}
 
-	public ArrayList<Provento> getProventos() {
+	public ArrayList<Provento2> getProventos() {
 		return proventos;
 	}
 
@@ -189,7 +189,15 @@ public class Funcionario {
 	}
 
 	public void setSalContInss(double salContInss) {
-		this.salContInss = nf.format(salContInss);
+		if(salContInss>0){
+			String d2 = String.format("%.2f", salContInss);
+			StringBuffer sb = new StringBuffer(d2);
+			if(salContInss>999){
+				sb.insert(sb.length() - 6, ".");				
+			}
+			this.salContInss = sb.toString();
+		}else
+			this.salContInss ="0";
 	}
 
 	public String getBaseCalcFgts() {
@@ -197,7 +205,15 @@ public class Funcionario {
 	}
 
 	public void setBaseCalcFgts(double baseCalcFgts) {
-		this.baseCalcFgts = nf.format(baseCalcFgts);
+		if(baseCalcFgts>0){
+			String d2 = String.format("%.2f", baseCalcFgts);
+			StringBuffer sb = new StringBuffer(d2);
+			if(baseCalcFgts>999){
+				sb.insert(sb.length() - 6, ".");				
+			}
+			this.baseCalcFgts = sb.toString();
+		}else
+			this.baseCalcFgts ="0";
 	}
 
 	public String getValorFgts() {
@@ -205,7 +221,15 @@ public class Funcionario {
 	}
 
 	public void setValorFgts(double valorFgts) {
-		this.valorFgts = nf.format(valorFgts);
+		if(valorFgts>0){
+			String d2 = String.format("%.2f", valorFgts);
+			StringBuffer sb = new StringBuffer(d2);
+			if(valorFgts>999){
+				sb.insert(sb.length() - 6, ".");				
+			}
+			this.valorFgts = sb.toString();
+		}else
+			this.valorFgts ="0";
 	}
 
 	public String getBaseCalcIrrf() {
@@ -213,7 +237,15 @@ public class Funcionario {
 	}
 
 	public void setBaseCalcIrrf(double baseCalcIrrf) {
-		this.baseCalcIrrf = nf.format(baseCalcIrrf);
+		if(baseCalcIrrf>0){
+			String d2 = String.format("%.2f", baseCalcIrrf);
+			StringBuffer sb = new StringBuffer(d2);
+			if(baseCalcIrrf>999){
+				sb.insert(sb.length() - 6, ".");				
+			}
+			this.baseCalcIrrf = sb.toString();
+		}else
+			this.baseCalcIrrf ="0";
 	}
 
 	
@@ -231,7 +263,15 @@ public class Funcionario {
 	}
 
 	public void setTotalProventos(double totalProventos) {
-		this.totalProventos = nf.format(totalProventos);
+		if(totalProventos>0){
+			String d2 = String.format("%.2f", totalProventos);
+			StringBuffer sb = new StringBuffer(d2);
+			if(totalProventos>999){
+				sb.insert(sb.length() - 6, ".");				
+			}
+			this.totalProventos = sb.toString();
+		}else
+			this.totalProventos ="0";
 	}
 
 	public String getTotalDescontos() {
@@ -239,7 +279,15 @@ public class Funcionario {
 	}
 
 	public void setTotalDescontos(double totalDescontos) {
-		this.totalDescontos = nf.format(totalDescontos);
+		if(totalDescontos>0){
+			String d2 = String.format("%.2f", totalDescontos);
+			StringBuffer sb = new StringBuffer(d2);
+			if(totalDescontos>999){
+				sb.insert(sb.length() - 6, ".");				
+			}
+			this.totalDescontos = sb.toString();
+		}else
+			this.totalDescontos ="0";
 	}
 
 	public String getTotalLiquido() {
@@ -247,10 +295,18 @@ public class Funcionario {
 	}
 
 	public void setTotalLiquido(double totalLiquido) {
-		this.totalLiquido = nf.format(totalLiquido);
+		if(totalLiquido>0){
+			String d2 = String.format("%.2f", totalLiquido);
+			StringBuffer sb = new StringBuffer(d2);
+			if(totalLiquido>999){
+				sb.insert(sb.length() - 6, ".");				
+			}
+			this.totalLiquido = sb.toString();
+		}else
+			this.totalLiquido ="0";
 	}
 
-	public void setProventos(ArrayList<Provento> proventos) {
+	public void setProventos(ArrayList<Provento2> proventos) {
 		this.proventos = proventos;
 	}
 	
@@ -258,7 +314,7 @@ public class Funcionario {
 	@Override
 	public String toString() {
 		String p ="";
-		for(Provento c : proventos) {  
+		for(Provento2 c : proventos) {  
 			  p += c.toString()+"\n";
 			}
 		

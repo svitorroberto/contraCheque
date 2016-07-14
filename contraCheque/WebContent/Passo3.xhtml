@@ -22,17 +22,26 @@
 		</div>
 		<div id="menu">
 			<h:form>
-				<p:steps activeIndex="3" styleClass="custom" readonly="false">
+				<p:steps activeIndex="2" styleClass="custom" readonly="false">
 					<p:menuitem value="Início" url="Inicial.jsf" />
-					<p:menuitem value="Enviar EXPORTA" url="Passo1.jsf" />
-					<p:menuitem value="Gerar PDFs" url="Passo2.jsf" />
-					<p:menuitem value="Visitar Site" url="Passo3.jsf" />
+					<p:menuitem value="Enviar EXPORTA" url="Passo2.jsf" />
+					<p:menuitem value="Mensagem" url="Passo3.jsf" />
+					<p:menuitem value="Gerar PDFs" url="Passo4.jsf" />
+					<p:menuitem value="Visitar Site" url="Passo5.jsf" />
 				</p:steps>
 			</h:form>
 		</div>
 
 		<div id="centro">
-			<h2><a href="http://contracheque.ceasa.go.gov.br/">Site do Contracheque</a></h2>
+			<h:form>
+				<h3>Mensagem</h3>
+				<p:inputTextarea rows="6" cols="33" value="#{arquivosMB.f2.mensagem}"/>
+				<p:commandButton value="Salvar Mensagem" id="ajax5"	actionListener="#{arquivosMB.salvarMensagem}" />
+			</h:form>
+			<h:form>
+					<p:messages severity="info" escape="false" showDetail="true"
+						autoUpdate="true" closable="true" />
+			</h:form>
 		</div>
 
 

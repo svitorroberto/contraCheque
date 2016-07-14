@@ -22,27 +22,18 @@
 		</div>
 		<div id="menu">
 			<h:form>
-				<p:steps activeIndex="1" styleClass="custom" readonly="false">
+				<p:steps activeIndex="4" styleClass="custom" readonly="false">
 					<p:menuitem value="Início" url="Inicial.jsf" />
-					<p:menuitem value="Enviar EXPORTA" url="Passo1.jsf" />
-					<p:menuitem value="Gerar PDFs" url="Passo2.jsf" />
-					<p:menuitem value="Visitar Site" url="Passo3.jsf" />
+					<p:menuitem value="Enviar EXPORTA" url="Passo2.jsf" />
+					<p:menuitem value="Mensagem" url="Passo3.jsf" />
+					<p:menuitem value="Gerar PDFs" url="Passo4.jsf" />
+					<p:menuitem value="Visitar Site" url="Passo5.jsf" />
 				</p:steps>
 			</h:form>
 		</div>
 
 		<div id="centro">
-			
-			<h:form enctype="multipart/form-data">
-				<p:fileUpload fileUploadListener="#{fileUploadMB.doUpload}"
-					showButtons="false" label="Anexar EXPORTA.TXT" auto="true" />
-			</h:form>
-			<h3>*Diretório padrão \\Servidor\rh\CCS\temp</h3>
-			<h:form>
-				<p:messages severity="info" escape="false" showDetail="true"
-					autoUpdate="true" closable="true" />
-			</h:form>
-
+			<h2><a href="http://contracheque.ceasa.go.gov.br/">Site do Contracheque</a></h2>
 		</div>
 
 
