@@ -9,11 +9,14 @@ import java.util.ArrayList;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import ftp.ConexaoFTP;
 import main.PDFFactory;
 import model.Caminhos;
 import model.Funcionario;
+import model.Mensagem;
 import model.Provento2;
 
 @ManagedBean(name = "arquivosMB")
@@ -25,7 +28,17 @@ public class ArquivosMB {
 	static Provento2 p;
 	public Funcionario f2;
 	static String msg;
+	static Mensagem m;
 
+	//RECUPERA OBJETO GRAVADO NA SESSÃO
+		HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+		HttpSession session = (HttpSession) request.getSession();
+	
+		
+	public void recuperaMensagem(){
+		m = (Mensagem) session.getAttribute("MENSAGEM");		
+	}
+		
 	public static void gerarPDF(){
 
 			FileUploadMB fmb = new FileUploadMB();
@@ -43,7 +56,7 @@ public class ArquivosMB {
 					if(num==1){
 						
 						f= new Funcionario();
-						f.setMensagem(msg);
+						f.setMensagem(m.getMsg());
 						f.setLotacao(Integer.parseInt(linha.substring(1, 6)));
 						f.setDivisao(linha.substring(6, 46));
 						f.setCargo(linha.substring(51, 91));
@@ -294,10 +307,9 @@ public class ArquivosMB {
 	}
 	
 	public void salvarMensagem(){
-		FacesMessage msg2 = new FacesMessage("Pronto","Mensagem salva! "+f.getMensagem());  
-        FacesContext.getCurrentInstance().addMessage(null, msg2);
-        System.out.println(f.getMensagem());
-		
+		session.setAttribute("MENSAGEM", m);
+		FacesMessage msg2 = new FacesMessage("Pronto","Mensagem salva! "+m.getMsg());  
+        FacesContext.getCurrentInstance().addMessage(null, msg2);		
 	}
 
 	
